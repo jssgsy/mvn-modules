@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--声明父模块为mvn-modules，则自动继承了父模块中引入的依赖、插件、version，groupId等等-->
+    <parent>
+        <artifactId>mvn-modules</artifactId>
+        <groupId>com.univ</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--artifactId与version都继承自父模块mvn-modules-->
+    <artifactId>module-A</artifactId>
+
+    <dependencies>
+        <!--
+        1. 子模块都是单独的项目，如果要引用，则需要引入依赖，此时才能调用module-B中的类;
+        2. 注意，<dependency>标签的意思是，会到本地仓库(~/.m2/repository)中查找module-B的jar包，因此需要先对module-B进行install命令后才能在module-A中引用module-B中的类
+        -->
+        <dependency>
+            <groupId>com.univ</groupId>
+            <artifactId>module-B</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

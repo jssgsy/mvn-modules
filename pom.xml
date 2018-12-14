@@ -19,12 +19,18 @@
         <module>module-B</module>
     </modules>
 
+    <!--父模块中定义的所有属性也会被子模块继承-->
+    <properties>
+        <junit.version>4.12</junit.version>
+    </properties>
+
+
     <!--所有的依赖都会被子模块继承，相当于子模块默认引入了这里的依赖-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
         </dependency>
 
         <dependency>

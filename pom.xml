@@ -69,5 +69,53 @@
         </plugins>
     </build>
 
+    <!--profile:在不同的环境有不同的配置，可以根据某些条件进行某个profile的激活，也可以设置默认的profile-->
+    <!--pom.xml文件中可以设置profile，settings.xml中也可以设置profile-->
+    <profiles>
+        <profile>
+            <id>qa</id>
+            <activation>
+                <!--默认指定启用qa环境-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>pre</id>
+            <properties>
+                <customer.version>在此profile中生效的属性</customer.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>p1</id>
+            <activation>
+                <!--根据jdk的版本来是否启用此profile-->
+                <jdk>1.7</jdk>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>p2</id>
+            <activation>
+                <!--根据操作系统来决定是否启用此profile-->
+                <os>
+                    <name></name>
+                    <version></version>
+                    <family></family>
+                    <arch></arch>
+                </os>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>p3</id>
+            <activation>
+                <!--根据文件是否存在来启用此profile-->
+                <file>
+                    <exists>xxx.abc</exists>
+                </file>
+            </activation>
+        </profile>
+    </profiles>
 
 </project>

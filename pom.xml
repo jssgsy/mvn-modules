@@ -72,6 +72,32 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.1</version>
+                <!--configuration标签下的每个配置项都是插件的一个属性-->
+                <configuration>
+                    <!--执行test阶段时是否忽略所有的测试-->
+                    <skip>false</skip>
+                    <!--要包含哪些测试类，当然支持正则形式的表达式，指定了包含的测试类，则未显示指定的测试类都将被忽略-->
+                    <includes>
+                        <include>com.univ.WebTest</include>
+                    </includes>
+                    <!--要排除哪些测试类，当然支持正则形式的表达式-->
+                    <excludes>
+                        <exclude>com.univ.ATest</exclude>
+                    </excludes>
+                </configuration>
+
+                <!--&lt;!&ndash;定制插件goal的行为&ndash;&gt;
+                <executions>
+                    <execution>
+                        &lt;!&ndash;这里也可以有配置项&ndash;&gt;
+                        <configuration></configuration>
+                        &lt;!&ndash;显示绑定到某个生命周期阶段,如果没有此标签，则说明是绑定到默认的生命周期阶段&ndash;&gt;
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>-->
             </plugin>
         </plugins>
     </build>

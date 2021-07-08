@@ -22,7 +22,7 @@
 
     <!--父模块中定义的所有属性也会被子模块继承-->
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
 

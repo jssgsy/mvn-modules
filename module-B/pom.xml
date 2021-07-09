@@ -19,6 +19,13 @@
             <!--中断依赖：此时任何对module-B的依赖都不会引入对fastjson的依赖-->
             <optional>true</optional>
         </dependency>
+
+        <!--parent中有定义版本为4.1，这里又定义版本为4.4，优先级当然这里高-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
     </dependencies>
 
 </project>

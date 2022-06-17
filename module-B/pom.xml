@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <version>1.2.83</version>
             <!--中断依赖：此时任何对module-B的依赖都不会引入对fastjson的依赖-->
             <optional>true</optional>
         </dependency>

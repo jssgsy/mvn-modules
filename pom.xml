@@ -18,6 +18,7 @@
         <module>module-A</module>
         <module>module-B</module>
         <module>module-web</module>
+        <module>module-C</module>
     </modules>
 
     <!--父模块中定义的所有属性也会被子模块继承-->
